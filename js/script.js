@@ -21,6 +21,7 @@ $('#programRun').click(function(){
         success: function(result) {
 
             console.log(result);
+            $('#inputter').val('')
 
             if (result.status.name == "ok") {
                 console.log(result[0].formatted)
@@ -35,7 +36,4 @@ $('#programRun').click(function(){
             console.log('there has been an error mate')
         }
     });
-
-    $('#inputter').html('');
-
 })    
