@@ -111,7 +111,7 @@
   }
 
 
-  @media only screen and (max-height: 450px) {
+  @media only screen and (max-height: 500px) {
     
     #navBar{      
       max-height: 50px;      
@@ -130,6 +130,7 @@
     }
 
     #inputter{
+      display:block;
       top:1.75vh;  
       position:absolute;    
       font-size: 16px;
@@ -140,6 +141,7 @@
     }
     
     #programRun{
+      display:block;
       position:absolute;
       top:12px;
       margin:-5px 0px 5px 185px;

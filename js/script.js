@@ -103,7 +103,7 @@ toggleSearch=false;
  }
 }
 
-$( window ).on( "orientationchange", function( event ) {
+/*$( window ).on( "orientationchange", function( event ) {
   if ($(window).height() <=450){
   $('#inputter').css({'display':'block', 'max-width': '180px'});
    $('#programRun').css({'display': 'block'});
@@ -111,4 +111,4 @@ $( window ).on( "orientationchange", function( event ) {
   }else{
     $('h1').css({'max-width':'40px'});
   } 
-});
+});*/

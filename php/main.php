@@ -30,7 +30,7 @@
 	$result['results']['weatherURL']=$weather_url;
 	
 	#exchange rate api
-	$exhange_url = "http://data.fixer.io/api/latest?access_key=bb1472c0c67f5c7096ea44b42be4ef53";
+	$exhange_url = "http://data.fixer.io/api/latest?access_key=fae496ce72fd165af7965eadb58e6439";
 	$currencyOutput = call_json_api($exhange_url);
   
 	#Dealing with exchange rate data
