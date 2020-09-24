@@ -104,11 +104,10 @@ toggleSearch=false;
 }
 
 $( window ).on( "orientationchange", function( event ) {
-  if ($(window).height() >=450){
+  if ($(window).height() <=450){
   $('#inputter').css({'display':'block', 'max-width': '180px'});
    $('#programRun').css({'display': 'block'});
   $('h1').css({'max-width':'100%'})
-  console.log(event);
   }else{
     $('h1').css({'max-width':'40px'});
   } 
