@@ -47,7 +47,8 @@ map.on('click', function(e){
         },
         
 
-        success: function(result) {                        
+        success: function(result) {
+            try{                        
             if (result.status.name == "ok") {
                 //Set view appropriately
                 map.setView(new L.LatLng(lat, lng), 4);
@@ -98,6 +99,10 @@ map.on('click', function(e){
                     errorHandler();
                 })
             }
+         }
+           catch(err){
+               errorHandler();
+           }
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // your error code
@@ -116,7 +121,8 @@ $('#programRun').click(function(){
         data: {
             address: $('#inputter').val(),            
         },
-        success: function(result) {    
+        success: function(result) {
+            try{    
             $('#inputter').val('')
 
             if (result.status.name == "ok") {
@@ -162,6 +168,9 @@ $('#programRun').click(function(){
                      errorHandler();
                     })
             }
+        }catch(err){
+            errorHandler()
+        }
  
          },
          error: function(jqXHR, textStatus, errorThrown) {
