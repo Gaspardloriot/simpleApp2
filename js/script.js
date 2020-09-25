@@ -103,12 +103,14 @@ toggleSearch=false;
  }
 }
 
-/*$( window ).on( "orientationchange", function( event ) {
-  if ($(window).height() <=450){
+$( window ).on( "orientationchange", function( event ) {
+  if ($(window).height() >=450){
   $('#inputter').css({'display':'block', 'max-width': '180px'});
    $('#programRun').css({'display': 'block'});
   $('h1').css({'max-width':'100%'})
+  console.log('screen is sideways')
   }else{
     $('h1').css({'max-width':'40px'});
+    console.log('screen is straight')
   } 
-});*/
+});
