@@ -50,7 +50,7 @@ function ModalCloser(){
     $('#modal-parent').css({'display':'none'})
   }, 450);
   toggle=false;
-};
+}
 
 function modalToggle(){
   if(toggle){
@@ -75,7 +75,7 @@ function mapTrigger(){
   const randomCoordinates=Math.floor(Math.random() * 4);
   map.fireEvent('click', {
     latlng: L.latLng(coordinates[randomCoordinates][0], coordinates[randomCoordinates][1])
-  });
+  })
   setTimeout(4000);  
 
 }

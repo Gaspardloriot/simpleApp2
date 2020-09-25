@@ -21,7 +21,7 @@ const map= L.map('map')	.setView([curLong,curLat], 5);
 
 //Initializing the tiles
 const token='pk.eyJ1IjoiZ2FzcGFyZGxvcmlvdCIsImEiOiJja2Zhc2I4cHkwcW5lMnlweGxlZnNqNWN4In0.C7yofBWa-Y2OeSw0wck7BA'
-L.tileLayer('https://api.maptiler.com/maps/toner/{z}/{x}/{y}.png?key=dRTBtEkpltsvNk3jVv3t', {
+L.tileLayer('https://api.maptiler.com/maps/toner/{z}/{x}/{y}.png?key=gpixVjn9tJwjVz2XXdtm', {
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
 }).addTo(map);
 
