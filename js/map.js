@@ -16,19 +16,21 @@ $(window).on('load',function(){
 
 
 //Initializing the map
-const map= L.map('map')	.setView([curLong,curLat], 5);
+const map= L.map('map')	.setView([curLong,curLat], 3);
+
+//Initialize the icon:
+const mapIcon = L.icon({
+    iconUrl: 'images/map_marker.svg',
+    iconSize:     [50, 120],       
+    popupAnchor:  [3, -40],
+    iconAnchor:   [22, 75],
+  });
+  
 
 
 //Initializing the tiles
 const token='pk.eyJ1IjoiZ2FzcGFyZGxvcmlvdCIsImEiOiJja2Zhc2I4cHkwcW5lMnlweGxlZnNqNWN4In0.C7yofBWa-Y2OeSw0wck7BA'
 
-//Initialize the icon:
-const mapIcon = L.icon({
-    iconUrl: 'images/map_pin.svg',
-    iconSize:     [58, 115],  
-    iconAnchor:   [22, 94], 
-    popupAnchor:  [7, -55] 
-});
 
 //Map clicking functionalities
 map.on('click', function(e){    
@@ -51,7 +53,7 @@ map.on('click', function(e){
         },
         
 
-        success: function(result) {
+        success: function(result) {            
             try{                        
             if (result.status.name == "ok") {
                 //Set view appropriately
@@ -133,7 +135,7 @@ $('#programRun').click(function(){
         data: {
             address: $('#inputter').val(),            
         },
-        success: function(result) {
+        success: function(result) {            
             try{    
             $('#inputter').val('')
 

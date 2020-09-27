@@ -1,6 +1,7 @@
 // Initialize as dark mode
 let dark_mode=true;
 
+
 let lightMap=  L.tileLayer('https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=3rx62rYMjdB3vYT611QR', {
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
     });
@@ -88,7 +89,7 @@ function changeIssIcons(){
     })        
   }).addTo(map);
   iss_marker.bindPopup(popup);
-  map.setView(new L.LatLng(iss_coordinates[0], iss_coordinates[1]), 4);              
+  map.setView(new L.LatLng(iss_coordinates[0], iss_coordinates[1]), 3);              
 }
     $('#iss_icon_container').html(`<img src="images/${(dark_mode ) ? "iss_pin_2" : "iss_pin"}.svg" id="iss_pin">`);
     

@@ -4,11 +4,10 @@ let iss_coordinates=0;
 
 //iss_popup
 const popup = L.popup()
-    .setContent("<b>Follow me!!</b><br> I'm the International Space Station,<br> currently zooming at over <b>27.000km/h</em>,</b> 25x the speed of a bullet");
+    .setContent("<b>Follow me!!</b><br> I'm the International Space Station,<br> currently zooming at over <b><br>27.000km/h</em></b>");
 
 //Getting the location
-window.setInterval(function(){
-    
+window.setInterval(function(){    
     try{
     fetch(`https://api.wheretheiss.at/v1/satellites/25544.json`).then(function (response){
         return response.json();
@@ -31,13 +30,12 @@ window.setInterval(function(){
         })        
     }).addTo(map);
     iss_marker.bindPopup(popup);
-    map.setView(new L.LatLng(iss_coordinates[0], iss_coordinates[1]), 4);     
+    map.setView(new L.LatLng(iss_coordinates[0], iss_coordinates[1]), 3);     
     }                
     })
 }catch(err){
     console.log("data not retrieved", err)
   }
- 
 }, 10000);
 
 //Toggle the ISS pin visibility:
@@ -59,7 +57,7 @@ function issToggle(){
         })        
       }).addTo(map);
       iss_marker.bindPopup(popup);
-      map.setView(new L.LatLng(iss_coordinates[0], iss_coordinates[1]), 4);      
+      map.setView(new L.LatLng(iss_coordinates[0], iss_coordinates[1]), 3);      
         console.log(issView)
     }
 }else{
