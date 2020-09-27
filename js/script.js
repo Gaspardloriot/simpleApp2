@@ -7,6 +7,7 @@ $(window).on('load', function () {
     }
 });
 
+
 const coordinates= [
   [
     55.7514952,
@@ -103,14 +104,31 @@ toggleSearch=false;
  }
 }
 
-/*$( window ).on( "orientationchange", function( event ) {
-  if ($(window).width() >=450){
-  $('#inputter').css({'display':'block', 'max-width': '180px'});
-   $('#programRun').css({'display': 'block'});
-  $('h1').css({'max-width':'100%'})
-  console.log('screen is sideways')
-  }else{
-    $('h1').css({'max-width':'40px'});
-    console.log('screen is straight')
-  } 
-});*/
+
+let screenSideways=false;
+//finding width of the screen
+$(window).on('load', function () {
+    if ($(window).height() <=400) {
+      screenSideways=true;      
+    }
+});
+
+
+//If search-bar display=block, 
+$( window ).on( "orientationchange", function(){
+  $('#preloader').delay(100).fadeOut('slow', function () {
+    $(this).remove();
+    });
+  if (screenSideways===false){
+    $('#inputter').css({'display':'block', 'max-width': '180px'});
+    $('#programRun').css({'display': 'block'});
+   $('h1').css({'max-width':'100%'})   
+   screenSideways=true;
+   toggleSearch=true;
+   }else{
+     $('h1').css({'max-width':'40px'});     
+     screenSideways=false;
+   } 
+ })
+
+ 

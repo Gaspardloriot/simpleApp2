@@ -22,6 +22,14 @@ const map= L.map('map')	.setView([curLong,curLat], 5);
 //Initializing the tiles
 const token='pk.eyJ1IjoiZ2FzcGFyZGxvcmlvdCIsImEiOiJja2Zhc2I4cHkwcW5lMnlweGxlZnNqNWN4In0.C7yofBWa-Y2OeSw0wck7BA'
 
+//Initialize the icon:
+const mapIcon = L.icon({
+    iconUrl: 'images/map_pin.svg',
+    iconSize:     [58, 115],  
+    iconAnchor:   [22, 94], 
+    popupAnchor:  [7, -55] 
+});
+
 //Map clicking functionalities
 map.on('click', function(e){    
     const coord = e.latlng;
@@ -85,10 +93,18 @@ map.on('click', function(e){
                         map.removeLayer(polygon) 
                     }
                     polygon = L.polygon(obj).addTo(map);
+
+                    if (dark_mode){
+                        polygon.setStyle({fillColor: '#f0ad4e', color:'#f0ad4e'});                    
+                    }else{
+                        polygon.setStyle({fillColor: '#0000FF', color:'#0000FF'});
+                    }
+                    
                     if (typeof marker !== 'undefined'){
                         map.removeLayer(marker) 
                        }                                
-                    marker = L.marker([lat, lng]).addTo(map);                    
+                    marker = L.marker([lat, lng], {icon: mapIcon}).addTo(map);                    
+                    marker.bindPopup("You selected here!").openPopup();                    
                     $('#buttoner').trigger('click');
                 })
                 .catch(function (error){
@@ -155,10 +171,18 @@ $('#programRun').click(function(){
                       polygon = L.polygon(
                         obj
                      ).addTo(map);
+
+                     if (dark_mode){
+                        polygon.setStyle({fillColor: '#f0ad4e', color:'#f0ad4e'});                    
+                    }else{
+                        polygon.setStyle({fillColor: '#0000FF', color:'#0000FF'});
+                    }
+                    
                      if (typeof marker !== 'undefined'){
                         map.removeLayer(marker) 
                        }                    
-                      marker = L.marker([coord.lat, coord.lng]).addTo(map); 
+                      marker = L.marker([coord.lat, coord.lng],  {icon: mapIcon}).addTo(map);                      
+                      marker.bindPopup("You selected here!").openPopup();           
                       $('#buttoner').trigger('click');
                  }).catch(function (error){  
                      errorHandler();

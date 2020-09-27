@@ -167,6 +167,13 @@
       display: block;
     }
 
+    #iss_pin{
+      position:fixed;
+      top: 35%;
+      left: 5%;
+      display: block;
+    }
+
     #night_light{
       position:fixed;
       top: 50%;
@@ -282,6 +289,7 @@
       padding-bottom: 15vh;
     }
 
+
     #main_icon{
       position:fixed;
       top: 82%;
@@ -289,9 +297,9 @@
       display: block;
     }
 
-    #main_icon{
+    #iss_pin{
       position:fixed;
-      top: 82%;
+      top: 42%;
       left: 5%;
       display: block;
     }
@@ -302,6 +310,8 @@
       left: 5%;
       display: block;
     }
+
+    
 
     #buttoner{
       position:fixed;
