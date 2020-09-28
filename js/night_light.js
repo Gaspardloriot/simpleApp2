@@ -84,8 +84,8 @@ function changeIssIcons(){
     map.removeLayer(iss_marker)  
     iss_marker= L.marker([iss_coordinates[0], iss_coordinates[1]], {icon: L.icon({
         iconUrl: `images/${(dark_mode ) ? "iss_pin_2" : "iss_pin"}.svg`,
-        iconAnchor:   [22, 94], 
-        iconSize:     [60, 60]    
+        popupAnchor:  [0, -30], 
+            iconSize: [60, 60]   
     })        
   }).addTo(map);
   iss_marker.bindPopup(popup);

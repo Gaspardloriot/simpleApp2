@@ -52,7 +52,7 @@ function issToggle(){
         issView=true;
         iss_marker= L.marker([iss_coordinates[0], iss_coordinates[1]], {icon: L.icon({
             iconUrl: `images/${(dark_mode ) ? "iss_pin_2" : "iss_pin"}.svg`,
-            iconAnchor:   [22, 94], 
+            popupAnchor:  [0, -30], 
             iconSize:     [60, 60]    
         })        
       }).addTo(map);
@@ -62,7 +62,7 @@ function issToggle(){
     }
 }else{
     (issView) ? issView=false : issView=true;
-    alert('Retrieving data, retry in 5 seconds')
-}
+    alert('Retrieving data, please 5 seconds')
+ }
 }
  

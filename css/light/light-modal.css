@@ -162,29 +162,28 @@
 
     #main_icon{
       position:fixed;
-      top: 82%;
-      left: 5%;
-      display: block;
-    }
-
-    #night_light{
-      position:fixed;
-      top: 50%;
+      top: 300px;
       left: 5%;
       display: block;
     }
 
     #iss_pin{
       position:fixed;
-      top: 35%;
+      top: 120px;
       left: 5%;
       display: block;
     }
 
+    #night_light{
+      position:fixed;
+      top: 240px;
+      left: 5%;
+      display: block;
+    }
 
     #buttoner{
       position:fixed;
-      top: 66%;
+      top: 180px;
       left: 5%;
       display: block;      
       border-radius: 50%;
@@ -192,6 +191,8 @@
       margin:0px;
       z-index:1;
     }
+
+    
     
     h1{
       padding-left: 15px;
@@ -397,4 +398,24 @@
   }
 
     
+  }
+
+  @media only screen and (max-height: 300px) {
+    #main_icon{
+      
+      display: none;
+    }
+
+    #phone-search{
+      display:none;
+    }
+
+    #night_light{
+      display:none;
+    }
+
+    #iss_pin{
+      display:none;
+    }
+
   }
