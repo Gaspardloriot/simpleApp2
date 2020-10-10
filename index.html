@@ -2,99 +2,100 @@
 
 <html lang="en">
 
-	<head>
+<head>
 
-		<meta charset="utf-8">
+	<meta charset="utf-8">
 
-		<title>gazetteer</title>
-		<meta name="description" content="Gazzeteer">
-		<meta name="author" content="Gaspard Loriot">
-		<meta content="width=device-width, initial-scale=1" name="viewport" />		
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	<title>gazetteer</title>
+	<meta name="description" content="Gazzeteer">
+	<meta name="author" content="Gaspard Loriot">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-		crossorigin=""/>
-		<script type="application/javascript" src="vendors/jquery-2.2.3.min.js"></script>
-		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		crossorigin="" />
+	<script type="application/javascript" src="vendors/jquery-2.2.3.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 		crossorigin=""></script>
-		<link   rel="stylesheet" 
-	          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-			  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-			  crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-		<span id="styles"><link rel="stylesheet" href="css/dark/styles.css">		
-						  <link rel="stylesheet" href="css/dark/modal.css">
-		</span>
-	</head>
+	<span id="styles">
+		<link rel="stylesheet" href="css/dark/styles.css">
+		<link rel="stylesheet" href="css/dark/modal.css">
+	</span>
+</head>
 
-	<body>			
+<body>
 
-	 <div id="preloader"></div>
-	 <div id="bg_black"></div>
+	<div id="preloader"></div>
+	<div id="bg_black">
 
-	 <div id="main">
-     <div id="navBar">
-		<span><h1>Gazetteer</h1>
-			  <img src="images/iconmonstr-globe-6.svg" alt="main_icon" id="main_icon">
-			  <span id='night_light_container'><img src="images/sun.svg" alt="night_light" id="night_light"></span>
-			  <span id='iss_icon_container'><img src="images/iss_pin_2.svg" alt="iss_pin" id="iss_pin"></span>
-		</span>
+		<div id="main">
+			<div id="navBar">
+				<h1>Gazetteer</h1>
+				<button type="button" name="button" id="buttoner" class="btn btn-warning"><img src="images/menu.svg"
+						alt="menu-toggle" id="burger_toggle"></button>
+				<span id="input_button"><input id="inputter" placeholder="29, Queensberry Place" type="text">
+					<button id="programRun" class="btn btn-warning">Submit</button>
+				</span>
+				<button id="phone-search"><img src="images/searcher.svg" alt="search_icon" id="searcher"></button>
+				<article id="icons"><div><img src="images/iconmonstr-globe-6.svg" alt="main_icon" id="main_icon"></div>
+					<span id='night_light_container'><img src="images/sun.svg" alt="night_light"
+							id="night_light"></span>
+					<span id='iss_icon_container'><img src="images/iss_pin_2.svg" alt="iss_pin" id="iss_pin"></span>
+				</article>
+			</div>
 
-		<span  id="input_button"><input id="inputter" 
-										placeholder="29, Queensberry Place"
-										type="text">
-			  <button id="programRun"
-					  class="btn btn-warning"
-			  >Submit</button>
-		</span>		
-		<button type="button" name="button" id="buttoner" class="btn btn-warning"><img src="images/menu.svg" alt="menu-toggle" id="burger_toggle"></button>
-		<button id="phone-search"><img src="images/searcher.svg" alt="search_icon" id="searcher"></button>
-	 </div>  			
-	 
-		<div id="map"></div>		
-		  
-		  </div>
-		
-	 </div>	
-	  
-	 <div  id='modal-parent'>
+			<div id="map"></div>
+		</div>
+
+	</div>
+
+	</div>
+
+	<div id='modal-parent'>
 		<div id="modal">
 			<span id="modal-title">
 				<h2 id="country">Country name</h2>
-				<p id="error_message">There bas been error. <br>You may have clicked on an invalid location, <br>and insufficient data was retrieved.</p>
-				<div id="country_flag"></div>				
+				<p id="error_message">There bas been error. <br>You may have clicked on an invalid location, <br>and
+					insufficient data was retrieved.</p>
+				<div id="country_flag"></div>
 			</span>
-		 <span id="modal-data">
-            <p id="formatted">Full address</p>
+			<span id="modal-data">
+				<p id="formatted">Full address</p>
 
-			<ul><div class="list_title">General information</div> 
-				<li id="capital">Capital</li>
-				<li id="continent">Continent</li>
-				<li id="population">Population</li>
-				<li id="coordinates">coordinates</li>
-			</ul>
-			<ul><div class="list_title">Currency</div>
-				<li id="currency">Currency code</li>
-				<li id="currency_sign">Currency sign</li>
-				<li id="currency_rate">Currency exchange rate</li>
-			</ul>
-			<ul><div class="list_title">Weather</div>				
-				<li id="temperature">temperature</li>
-				<li id="weather_description">weather description</li>
-			</ul>
-		 </span>
-			
+				<ul>
+					<div class="list_title">General information</div>
+					<li id="capital">Capital</li>
+					<li id="continent">Continent</li>
+					<li id="population">Population</li>
+					<li id="coordinates">coordinates</li>
+				</ul>
+				<ul>
+					<div class="list_title">Currency</div>
+					<li id="currency">Currency code</li>
+					<li id="currency_sign">Currency sign</li>
+					<li id="currency_rate">Currency exchange rate</li>
+				</ul>
+				<ul>
+					<div class="list_title">Weather</div>
+					<li id="temperature">temperature</li>
+					<li id="weather_description">weather description</li>
+				</ul>
+			</span>
 
-	        <span class='X' id='X' draggable='true'>&times;</span>
-		</div>			  
-	  </div>
-	 
-	  
-	  <script type="text/javascript" src="vendors/country-borders/ABW.json"></script>
-	  <script type="application/javascript" src="js/map.js"></script>
-	  <script type="application/javascript" src="js/night_light.js"></script>
-	  <script type="application/javascript" src="js/script.js"></script>
-	  <script type="application/javascript" src="js/iss_map.js"></script>	  
-	</body>
+
+			<span class='X' id='X' draggable='true'>&times;</span>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="vendors/country-borders/ABW.json"></script>
+	<script type="application/javascript" src="js/map.js"></script>
+	<script type="application/javascript" src="js/night_light.js"></script>
+	<script type="application/javascript" src="js/script.js"></script>
+	<script type="application/javascript" src="js/iss_map.js"></script>
+</body>
 
 </html>
